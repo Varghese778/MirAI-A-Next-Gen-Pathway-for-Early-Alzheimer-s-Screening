@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Results - MirAI</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="app-container">
+        <div class="bg-gradient"></div>
+        <div class="bg-particles"></div>
+
+        <main class="main-content">
+            <div class="results-container">
+                <!-- Risk score display -->
+                <div class="risk-display">
+                    <h2>Your Risk Assessment</h2>
+
+                    <div class="gauge-container">
+                        <svg viewBox="0 0 200 100" class="gauge">
+                            <path class="gauge-bg" d="M 20 90 A 70 70 0 0 1 180 90" />
+                            <path class="gauge-fill" id="gaugeFill" d="M 20 90 A 70 70 0 0 1 180 90" />
+                        </svg>
+                    </div>
+
+                    <div class="risk-score-value" id="riskScore">--</div>
+                    <div class="risk-category" id="riskCategory">Loading...</div>
+                </div>
+
+                <!-- Result message -->
+                <div class="result-message" id="resultMessage">
+                    <h3>What This Means</h3>
+                    <p id="messageText">Loading your results...</p>
+                </div>
+
+                <!-- Contributing factors -->
+                <div class="factors-section" id="factorsSection">
+                    <h3>Key Contributing Factors</h3>
+                    <div id="factorsList">
+                        <!-- Dynamically populated -->
+                    </div>
+                </div>
+
+                <!-- Stage-2 section -->
+                <div class="stage2-section">
+                    <h3>🧬 Stage-2: Genetic Risk Assessment</h3>
+                    <p>Enhance your risk profile with genetic markers including APOE ε4 genotype and Polygenic Risk
+                        Score for a more comprehensive assessment.</p>
+                    <button class="btn btn-primary" id="stage2Btn" onclick="goToStage2()">
+                        <span>Continue to Stage-2</span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7" />
+                        </svg>
+                    </button>
+                </div>
+
+                <!-- Actions -->
+                <div class="result-actions">
+                    <button class="btn btn-secondary" onclick="window.location.href='dashboard.html'">
+                        Back to Dashboard
+                    </button>
+                    <button class="btn btn-primary" onclick="startNewAssessment()">
+                        <span>New Assessment</span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <p>MirAI Research Platform • Stage-1 Clinical Screening</p>
+        </footer>
+    </div>
+
+    <script src="js/api.js"></script>
+    <script src="js/results.js"></script>
+</body>
+
+</html>

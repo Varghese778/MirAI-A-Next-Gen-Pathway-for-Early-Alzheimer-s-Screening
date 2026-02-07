@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MirAI - Stage-3 Biomarker Assessment</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body class="stage3-page">
+    <div class="app-container">
+        <!-- Header -->
+        <header class="app-header">
+            <div class="header-content">
+                <div class="logo">
+                    <span class="logo-icon">🧠</span>
+                    <span class="logo-text">MirAI</span>
+                    <span class="stage-badge">Stage-3</span>
+                </div>
+                <nav class="header-nav">
+                    <a href="dashboard.html" class="nav-link">Dashboard</a>
+                    <span class="user-avatar" id="userAvatar">U</span>
+                </nav>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="stage3-container">
+                <!-- Introduction -->
+                <div class="glass-card stage3-intro">
+                    <div class="biomarker-icon">🔬</div>
+                    <h1>Biomarker Risk Assessment</h1>
+                    <p class="intro-text">
+                        Stage-3 evaluates plasma biomarkers that detect early Alzheimer's pathology
+                        with high specificity. These biomarkers can identify brain changes years
+                        before symptoms appear.
+                    </p>
+
+                    <!-- Medical Disclaimer -->
+                    <div class="disclaimer-box">
+                        <div class="disclaimer-icon">⚕️</div>
+                        <div class="disclaimer-content">
+                            <h3>Medical Disclaimer</h3>
+                            <p>
+                                This is a <strong>screening tool only</strong> and does not constitute a medical
+                                diagnosis.
+                                Biomarker values should be obtained from certified clinical laboratories.
+                                Always consult with a qualified healthcare provider for interpretation and follow-up.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Biomarker Input Form -->
+                <div class="glass-card stage3-form-card">
+                    <h2>Enter Biomarker Values</h2>
+                    <p class="form-subtitle">Missing values are supported - leave blank if not available.</p>
+
+                    <form id="stage3Form" class="stage3-form">
+                        <!-- pTau-217 -->
+                        <div class="form-group">
+                            <label class="form-label">
+                                <span>Plasma pTau-217</span>
+                                <span class="info-tooltip" title="Phosphorylated tau at threonine 217">ℹ️</span>
+                            </label>
+                            <p class="form-help">
+                                Elevated pTau-217 indicates tau pathology associated with Alzheimer's disease.
+                            </p>
+                            <div class="biomarker-input-wrapper">
+                                <input type="number" id="ptau217" name="ptau217" step="0.01" min="0" max="100"
+                                    placeholder="e.g., 2.5">
+                                <span class="input-unit">pg/mL</span>
+                            </div>
+                        </div>
+
+                        <!-- pTau-217/Aβ42 Ratio -->
+                        <div class="form-group">
+                            <label class="form-label">
+                                <span>pTau-217/Aβ42 Ratio</span>
+                                <span class="info-tooltip" title="Ratio of pTau-217 to Amyloid-beta 42">ℹ️</span>
+                            </label>
+                            <p class="form-help">
+                                This ratio improves diagnostic accuracy by combining tau and amyloid markers.
+                            </p>
+                            <div class="biomarker-input-wrapper">
+                                <input type="number" id="ptau217_abeta42_ratio" name="ptau217_abeta42_ratio"
+                                    step="0.001" min="0" max="10" placeholder="e.g., 0.089">
+                                <span class="input-unit">ratio</span>
+                            </div>
+                        </div>
+
+                        <!-- Neurofilament Light -->
+                        <div class="form-group">
+                            <label class="form-label">
+                                <span>Neurofilament Light (NfL)</span>
+                                <span class="info-tooltip" title="Marker of neuronal damage">ℹ️</span>
+                            </label>
+                            <p class="form-help">
+                                NfL reflects neurodegeneration and axonal damage in the brain.
+                            </p>
+                            <div class="biomarker-input-wrapper">
+                                <input type="number" id="nfl" name="nfl" step="0.1" min="0" max="500"
+                                    placeholder="e.g., 18.5">
+                                <span class="input-unit">pg/mL</span>
+                            </div>
+                        </div>
+
+                        <!-- Consent -->
+                        <div class="consent-check">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="consentCheckbox" required>
+                                <span class="checkbox-custom"></span>
+                                <span>
+                                    I understand this is a screening tool and not a diagnosis.
+                                    I consent to have my biomarker data analyzed for risk assessment.
+                                </span>
+                            </label>
+                        </div>
+
+                        <!-- Submit Button -->
+                        <button type="submit" class="btn btn-primary btn-block" id="submitBtn">
+                            <span>Analyze Biomarkers</span>
+                            <span class="btn-loader"></span>
+                        </button>
+                    </form>
+                </div>
+
+                <!-- About Biomarkers -->
+                <div class="glass-card info-section">
+                    <h3>About These Biomarkers</h3>
+                    <div class="info-grid">
+                        <div class="info-item">
+                            <div class="info-item-icon">🧬</div>
+                            <h4>pTau-217</h4>
+                            <p>One of the most accurate plasma biomarkers for detecting Alzheimer's-related tau
+                                pathology.</p>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-item-icon">📊</div>
+                            <h4>pTau/Aβ42 Ratio</h4>
+                            <p>Combines tau and amyloid markers for enhanced diagnostic accuracy.</p>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-item-icon">🔍</div>
+                            <h4>Neurofilament Light</h4>
+                            <p>Indicates neuronal damage and correlates with disease progression.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="js/api.js"></script>
+    <script src="js/stage3.js"></script>
+</body>
+
+</html>

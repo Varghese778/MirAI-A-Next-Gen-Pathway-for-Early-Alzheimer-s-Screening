@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assessment - MirAI</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="app-container">
+        <div class="bg-gradient"></div>
+        <div class="bg-particles"></div>
+
+        <main class="main-content">
+            <div class="questionnaire-container">
+                <!-- Progress bar -->
+                <div class="progress-container">
+                    <div class="progress-header">
+                        <span id="progressText">Question 1 of 25</span>
+                        <span id="progressPercent">0%</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progressFill" style="width: 0%"></div>
+                    </div>
+                </div>
+
+                <!-- Question card -->
+                <div class="question-card">
+                    <div class="section-title" id="sectionTitle">Loading...</div>
+                    <h2 class="question-text" id="questionText"></h2>
+
+                    <div class="answer-container" id="answerContainer">
+                        <!-- Dynamically populated -->
+                    </div>
+                </div>
+
+                <!-- Navigation -->
+                <div class="question-nav">
+                    <button class="btn btn-prev btn-nav" id="prevBtn" disabled>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M19 12H5M12 19l-7-7 7-7" />
+                        </svg>
+                        <span>Previous</span>
+                    </button>
+                    <button class="btn btn-primary btn-nav" id="nextBtn">
+                        <span>Next</span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <p>MirAI Research Platform • Stage-1 Clinical Screening</p>
+        </footer>
+
+        <!-- Demo Panel for Testing -->
+        <div class="demo-panel" id="demoPanel">
+            <div class="demo-toggle" onclick="toggleDemoPanel()">🧪 Demo</div>
+            <div class="demo-content" id="demoContent">
+                <div class="demo-title">Quick Fill Presets</div>
+                <button class="demo-btn demo-high" onclick="fillDemoData('high')">🔴 High Risk</button>
+                <button class="demo-btn demo-moderate" onclick="fillDemoData('moderate')">🟡 Moderate</button>
+                <button class="demo-btn demo-low" onclick="fillDemoData('low')">🟢 Low Risk</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/api.js"></script>
+    <script src="js/questionnaire.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MirAI - Combined Risk Assessment</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body class="results-page combined-results-page">
+    <div class="app-container">
+        <!-- Header -->
+        <header class="app-header">
+            <div class="header-content">
+                <div class="logo">
+                    <span class="logo-icon">🧠</span>
+                    <span class="logo-text">MirAI</span>
+                    <span class="stage-badge">Combined Results</span>
+                </div>
+                <nav class="header-nav">
+                    <a href="dashboard.html" class="nav-link">Dashboard</a>
+                    <span class="user-avatar" id="userAvatar">U</span>
+                </nav>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="results-container combined-container">
+                <!-- Combined Score Hero -->
+                <div class="glass-card results-hero combined-hero">
+                    <h1>Combined Risk Assessment</h1>
+                    <p class="hero-subtitle">Stage-1 Clinical + Stage-2 Genetic Analysis</p>
+
+                    <!-- Combined Risk Gauge -->
+                    <div class="risk-gauge combined-gauge">
+                        <div class="gauge-circle">
+                            <svg viewBox="0 0 120 120">
+                                <circle class="gauge-bg" cx="60" cy="60" r="54" />
+                                <circle class="gauge-fill" id="combinedGaugeFill" cx="60" cy="60" r="54" />
+                            </svg>
+                            <div class="gauge-value">
+                                <span class="gauge-number" id="combinedScore">--</span>
+                                <span class="gauge-unit">%</span>
+                            </div>
+                        </div>
+                        <div class="gauge-label" id="combinedCategory">Calculating...</div>
+                    </div>
+                </div>
+
+                <!-- Three-Column Risk Breakdown -->
+                <div class="risk-breakdown-row">
+                    <!-- Stage-1 Clinical -->
+                    <div class="glass-card risk-column stage1-column">
+                        <div class="column-header">
+                            <span class="column-icon">📋</span>
+                            <h3>Stage-1: Clinical</h3>
+                        </div>
+                        <div class="risk-mini-gauge">
+                            <div class="mini-gauge-bar">
+                                <div class="mini-gauge-fill" id="stage1GaugeFill"></div>
+                            </div>
+                            <div class="mini-gauge-value">
+                                <span id="stage1Score">--</span>%
+                            </div>
+                        </div>
+                        <div class="risk-category-badge" id="stage1Category">--</div>
+                        <p class="risk-weight">Weight: <strong>40%</strong></p>
+                    </div>
+
+                    <!-- Stage-2 Genetic -->
+                    <div class="glass-card risk-column stage2-column">
+                        <div class="column-header">
+                            <span class="column-icon">🧬</span>
+                            <h3>Stage-2: Genetic</h3>
+                        </div>
+                        <div class="risk-mini-gauge">
+                            <div class="mini-gauge-bar">
+                                <div class="mini-gauge-fill" id="stage2GaugeFill"></div>
+                            </div>
+                            <div class="mini-gauge-value">
+                                <span id="stage2Score">--</span>%
+                            </div>
+                        </div>
+                        <div class="risk-category-badge" id="stage2Category">--</div>
+                        <p class="risk-weight">Weight: <strong>60%</strong></p>
+                    </div>
+
+                    <!-- Combined -->
+                    <div class="glass-card risk-column combined-column highlight">
+                        <div class="column-header">
+                            <span class="column-icon">⚡</span>
+                            <h3>Combined</h3>
+                        </div>
+                        <div class="combined-formula">
+                            <span class="formula-text">(0.4 × Clinical) + (0.6 × Genetic)</span>
+                        </div>
+                        <div class="combined-score-display">
+                            <span id="combinedScoreSmall">--</span>%
+                        </div>
+                        <div class="risk-category-badge" id="combinedCategorySmall">--</div>
+                    </div>
+                </div>
+
+                <!-- Message Card -->
+                <div class="glass-card message-card" id="messageCard">
+                    <div class="message-icon">💡</div>
+                    <p id="resultMessage">Loading your assessment results...</p>
+                </div>
+
+                <!-- Continue to Stage-3 -->
+                <div class="glass-card stage3-cta">
+                    <div class="cta-content">
+                        <span class="cta-badge">Available Now</span>
+                        <h3>Continue to Stage-3: Biomarker Screening</h3>
+                        <p>
+                            Complete your assessment with plasma biomarker analysis for the most
+                            comprehensive Alzheimer's risk evaluation.
+                        </p>
+                    </div>
+                    <button class="btn btn-primary btn-large" onclick="goToStage3()">
+                        <span>🔬 Begin Stage-3</span>
+                    </button>
+                </div>
+
+                <!-- Actions -->
+                <div class="results-actions">
+                    <a href="dashboard.html" class="btn btn-secondary">
+                        <span>Back to Dashboard</span>
+                    </a>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="js/api.js"></script>
+    <script src="js/combined-results.js"></script>
+</body>
+
+</html>

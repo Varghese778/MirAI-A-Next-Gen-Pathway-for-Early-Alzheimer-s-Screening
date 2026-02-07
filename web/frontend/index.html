@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MirAI - Alzheimer's Risk Assessment</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Background effects -->
+        <div class="bg-gradient"></div>
+        <div class="bg-particles"></div>
+        
+        <!-- Main content -->
+        <main class="main-content">
+            <div class="auth-container">
+                <!-- Logo and branding -->
+                <div class="brand">
+                    <div class="logo">
+                        <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="24" cy="24" r="22" stroke="url(#gradient)" stroke-width="3"/>
+                            <path d="M16 32V20L24 16L32 20V32L24 36L16 32Z" stroke="url(#gradient)" stroke-width="2"/>
+                            <circle cx="24" cy="24" r="4" fill="url(#gradient)"/>
+                            <defs>
+                                <linearGradient id="gradient" x1="0" y1="0" x2="48" y2="48">
+                                    <stop stop-color="#667eea"/>
+                                    <stop offset="1" stop-color="#764ba2"/>
+                                </linearGradient>
+                            </defs>
+                        </svg>
+                    </div>
+                    <h1>MirAI</h1>
+                    <p class="tagline">Early Alzheimer's Risk Screening</p>
+                </div>
+                
+                <!-- Disclaimer -->
+                <div class="disclaimer">
+                    <span class="disclaimer-icon">ℹ️</span>
+                    <p>Research prototype only. Not a diagnostic tool.</p>
+                </div>
+                
+                <!-- Auth forms wrapper -->
+                <div class="auth-forms">
+                    <!-- Login form -->
+                    <form id="loginForm" class="auth-form active">
+                        <h2>Welcome Back</h2>
+                        <div class="form-group">
+                            <label for="loginUsername">Username</label>
+                            <input type="text" id="loginUsername" name="username" required 
+                                   placeholder="Enter your username" autocomplete="username">
+                        </div>
+                        <div class="form-group">
+                            <label for="loginPassword">Password</label>
+                            <input type="password" id="loginPassword" name="password" required 
+                                   placeholder="Enter your password" autocomplete="current-password">
+                        </div>
+                        <button type="submit" class="btn btn-primary">
+                            <span>Sign In</span>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M5 12h14M12 5l7 7-7 7"/>
+                            </svg>
+                        </button>
+                        <div class="form-footer">
+                            <p>Don't have an account? <a href="#" id="showRegister">Create one</a></p>
+                        </div>
+                    </form>
+                    
+                    <!-- Register form -->
+                    <form id="registerForm" class="auth-form">
+                        <h2>Create Account</h2>
+                        <div class="form-group">
+                            <label for="registerUsername">Username</label>
+                            <input type="text" id="registerUsername" name="username" required 
+                                   placeholder="Choose a username" autocomplete="username" minlength="3">
+                        </div>
+                        <div class="form-group">
+                            <label for="registerPassword">Password</label>
+                            <input type="password" id="registerPassword" name="password" required 
+                                   placeholder="Choose a password" autocomplete="new-password" minlength="6">
+                        </div>
+                        <div class="form-group">
+                            <label for="confirmPassword">Confirm Password</label>
+                            <input type="password" id="confirmPassword" name="confirmPassword" required 
+                                   placeholder="Confirm your password" autocomplete="new-password">
+                        </div>
+                        <button type="submit" class="btn btn-primary">
+                            <span>Create Account</span>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M5 12h14M12 5l7 7-7 7"/>
+                            </svg>
+                        </button>
+                        <div class="form-footer">
+                            <p>Already have an account? <a href="#" id="showLogin">Sign in</a></p>
+                        </div>
+                    </form>
+                </div>
+                
+                <!-- Error message display -->
+                <div id="authError" class="error-message hidden">
+                    <span class="error-icon">⚠️</span>
+                    <span class="error-text"></span>
+                </div>
+            </div>
+        </main>
+        
+        <!-- Footer -->
+        <footer class="footer">
+            <p>MirAI Research Platform • Stage-1 Clinical Screening</p>
+        </footer>
+    </div>
+    
+    <script src="js/api.js"></script>
+    <script src="js/auth.js"></script>
+</body>
+</html>

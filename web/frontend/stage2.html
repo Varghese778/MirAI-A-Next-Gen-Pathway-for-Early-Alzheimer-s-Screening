@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MirAI - Stage-2 Genetic Assessment</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body class="stage2-page">
+    <div class="app-container">
+        <!-- Header -->
+        <header class="app-header">
+            <div class="header-content">
+                <div class="logo">
+                    <span class="logo-icon">🧬</span>
+                    <span class="logo-text">MirAI</span>
+                    <span class="stage-badge">Stage 2</span>
+                </div>
+                <nav class="header-nav">
+                    <a href="dashboard.html" class="nav-link">Dashboard</a>
+                    <span class="user-avatar" id="userAvatar">U</span>
+                </nav>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="stage2-container">
+                <!-- Intro Card -->
+                <div class="glass-card stage2-intro">
+                    <div class="dna-icon">🧬</div>
+                    <h1>Stage-2: Genetic Risk Assessment</h1>
+                    <p class="intro-text">
+                        This stage incorporates genetic markers to provide a more comprehensive
+                        understanding of your Alzheimer's disease risk profile.
+                    </p>
+
+                    <!-- Consent Notice -->
+                    <div class="consent-box">
+                        <div class="consent-icon">⚠️</div>
+                        <div class="consent-content">
+                            <h3>Important Notice</h3>
+                            <p>
+                                Genetic information is sensitive personal data. By proceeding, you acknowledge
+                                that this screening is for research purposes only and does not constitute
+                                medical advice. Your data is stored locally and is never transmitted externally.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Genetic Input Form -->
+                <div class="glass-card stage2-form-card">
+                    <h2>Genetic Markers</h2>
+
+                    <form id="stage2Form" class="stage2-form">
+                        <!-- APOE ε4 Input -->
+                        <div class="form-group">
+                            <label class="form-label">
+                                APOE ε4 Genotype
+                                <span class="info-tooltip"
+                                    title="The APOE ε4 allele is the strongest genetic risk factor for late-onset Alzheimer's disease.">ℹ️</span>
+                            </label>
+                            <p class="form-help">
+                                How many copies of the APOE ε4 allele do you have?
+                                (If unknown, consult your genetic test results or select 0)
+                            </p>
+                            <div class="radio-group">
+                                <label class="radio-option" data-value="0">
+                                    <input type="radio" name="apoe_e4_count" value="0" required>
+                                    <span class="radio-custom"></span>
+                                    <span class="radio-label">
+                                        <strong>0 copies</strong>
+                                        <span class="risk-level low">Lower genetic risk</span>
+                                    </span>
+                                </label>
+                                <label class="radio-option" data-value="1">
+                                    <input type="radio" name="apoe_e4_count" value="1">
+                                    <span class="radio-custom"></span>
+                                    <span class="radio-label">
+                                        <strong>1 copy</strong>
+                                        <span class="risk-level moderate">Moderate genetic risk</span>
+                                    </span>
+                                </label>
+                                <label class="radio-option" data-value="2">
+                                    <input type="radio" name="apoe_e4_count" value="2">
+                                    <span class="radio-custom"></span>
+                                    <span class="radio-label">
+                                        <strong>2 copies</strong>
+                                        <span class="risk-level high">Elevated genetic risk</span>
+                                    </span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- PRS Input -->
+                        <div class="form-group">
+                            <label class="form-label">
+                                Polygenic Risk Score (PRS)
+                                <span class="optional-tag">Optional</span>
+                            </label>
+                            <p class="form-help">
+                                If you have a Polygenic Risk Score from a genetic test, enter it below.
+                                This score aggregates multiple genetic variants associated with Alzheimer's risk.
+                            </p>
+                            <div class="prs-input-wrapper">
+                                <input type="number" id="prs_input" name="polygenic_risk_score" step="0.001" min="0"
+                                    max="1" placeholder="e.g., 0.45">
+                                <span class="input-unit">(0-1 scale)</span>
+                            </div>
+                        </div>
+
+                        <!-- Consent Checkbox -->
+                        <div class="form-group consent-check">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="consentCheck" required>
+                                <span class="checkbox-custom"></span>
+                                I understand that this is a research screening tool and agree to the processing of my
+                                genetic information for risk assessment purposes.
+                            </label>
+                        </div>
+
+                        <!-- Submit Button -->
+                        <button type="submit" class="btn btn-primary btn-large" id="submitBtn">
+                            <span>Analyze Genetic Risk</span>
+                            <span class="btn-icon">→</span>
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Info Cards -->
+                <div class="info-cards-row">
+                    <div class="glass-card info-card">
+                        <div class="info-icon">🔬</div>
+                        <h4>About APOE ε4</h4>
+                        <p>The APOE gene provides instructions for making apolipoprotein E. The ε4 variant is associated
+                            with increased Alzheimer's risk.</p>
+                    </div>
+                    <div class="glass-card info-card">
+                        <div class="info-icon">📊</div>
+                        <h4>About PRS</h4>
+                        <p>A Polygenic Risk Score combines the effects of many genetic variants to estimate overall
+                            genetic predisposition.</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="js/api.js"></script>
+    <script src="js/stage2.js"></script>
+</body>
+
+</html>

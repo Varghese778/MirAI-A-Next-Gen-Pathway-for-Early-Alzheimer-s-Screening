@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - MirAI</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="app-container">
+        <div class="bg-gradient"></div>
+        <div class="bg-particles"></div>
+
+        <main class="main-content">
+            <div class="dashboard-container">
+                <!-- Header with user info -->
+                <header class="dashboard-header">
+                    <div class="user-info">
+                        <div class="user-avatar" id="userAvatar">U</div>
+                        <div class="user-details">
+                            <h3 id="userName">User</h3>
+                            <p>Stage-1 Assessment</p>
+                        </div>
+                    </div>
+                    <button class="btn btn-secondary btn-logout" onclick="logout()">
+                        Sign Out
+                    </button>
+                </header>
+
+                <!-- Welcome card -->
+                <div class="welcome-card">
+                    <h2>Alzheimer's Risk Assessment</h2>
+                    <p>Complete our research-validated 25-question screening to receive a personalized risk analysis.
+                        This assessment takes approximately 10 minutes.</p>
+                    <button class="btn btn-primary btn-start" id="startBtn">
+                        <span>Start Assessment</span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7" />
+                        </svg>
+                    </button>
+                </div>
+
+                <!-- Disclaimer -->
+                <div class="disclaimer" style="margin-bottom: var(--spacing-xl);">
+                    <span class="disclaimer-icon">⚠️</span>
+                    <p>This is a research screening tool, not a clinical diagnosis. Please consult a healthcare
+                        professional for medical advice.</p>
+                </div>
+
+                <!-- Assessment history -->
+                <div class="history-section">
+                    <h3>Previous Assessments</h3>
+                    <div class="history-list" id="historyList">
+                        <div class="no-history">
+                            <p>No previous assessments found.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <p>MirAI Research Platform • Stage-1 Clinical Screening</p>
+        </footer>
+    </div>
+
+    <script src="js/api.js"></script>
+    <script src="js/dashboard.js"></script>
+</body>
+
+</html>

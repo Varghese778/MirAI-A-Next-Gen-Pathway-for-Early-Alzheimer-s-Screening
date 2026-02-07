@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MirAI - Final Risk Assessment</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body class="results-page final-results-page">
+    <div class="app-container">
+        <!-- Header -->
+        <header class="app-header">
+            <div class="header-content">
+                <div class="logo">
+                    <span class="logo-icon">🧠</span>
+                    <span class="logo-text">MirAI</span>
+                    <span class="stage-badge final-badge">Final Results</span>
+                </div>
+                <nav class="header-nav">
+                    <a href="dashboard.html" class="nav-link">Dashboard</a>
+                    <span class="user-avatar" id="userAvatar">U</span>
+                </nav>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="results-container final-container">
+                <!-- Final Score Hero -->
+                <div class="glass-card results-hero final-hero">
+                    <h1>Final Alzheimer's Risk Assessment</h1>
+                    <p class="hero-subtitle">Complete 3-Stage Analysis Results</p>
+
+                    <!-- Final Risk Gauge -->
+                    <div class="risk-gauge final-gauge">
+                        <div class="gauge-circle large">
+                            <svg viewBox="0 0 120 120">
+                                <circle class="gauge-bg" cx="60" cy="60" r="54" />
+                                <circle class="gauge-fill" id="finalGaugeFill" cx="60" cy="60" r="54" />
+                            </svg>
+                            <div class="gauge-value">
+                                <span class="gauge-number" id="finalScore">--</span>
+                                <span class="gauge-unit">%</span>
+                            </div>
+                        </div>
+                        <div class="gauge-label" id="finalCategory">Calculating...</div>
+                    </div>
+                </div>
+
+                <!-- Three-Stage Breakdown -->
+                <div class="stages-breakdown">
+                    <!-- Stage-1 Clinical -->
+                    <div class="glass-card stage-column stage1-col">
+                        <div class="stage-header">
+                            <span class="stage-icon">📋</span>
+                            <h3>Stage-1: Clinical</h3>
+                            <span class="stage-weight">25%</span>
+                        </div>
+                        <div class="stage-gauge-mini">
+                            <div class="mini-bar">
+                                <div class="mini-fill" id="stage1Fill"></div>
+                            </div>
+                            <span class="mini-value" id="stage1Score">--</span>%
+                        </div>
+                        <div class="stage-category" id="stage1Category">--</div>
+                    </div>
+
+                    <!-- Stage-2 Genetic -->
+                    <div class="glass-card stage-column stage2-col">
+                        <div class="stage-header">
+                            <span class="stage-icon">🧬</span>
+                            <h3>Stage-2: Genetic</h3>
+                            <span class="stage-weight">35%</span>
+                        </div>
+                        <div class="stage-gauge-mini">
+                            <div class="mini-bar">
+                                <div class="mini-fill" id="stage2Fill"></div>
+                            </div>
+                            <span class="mini-value" id="stage2Score">--</span>%
+                        </div>
+                        <div class="stage-category" id="stage2Category">--</div>
+                    </div>
+
+                    <!-- Stage-3 Biomarker -->
+                    <div class="glass-card stage-column stage3-col">
+                        <div class="stage-header">
+                            <span class="stage-icon">🔬</span>
+                            <h3>Stage-3: Biomarker</h3>
+                            <span class="stage-weight">40%</span>
+                        </div>
+                        <div class="stage-gauge-mini">
+                            <div class="mini-bar">
+                                <div class="mini-fill" id="stage3Fill"></div>
+                            </div>
+                            <span class="mini-value" id="stage3Score">--</span>%
+                        </div>
+                        <div class="stage-category" id="stage3Category">--</div>
+                    </div>
+                </div>
+
+                <!-- Recommendation Card -->
+                <div class="glass-card recommendation-card" id="recommendationCard">
+                    <div class="rec-header">
+                        <span class="rec-icon" id="recIcon">📌</span>
+                        <h3>Clinical Recommendation</h3>
+                    </div>
+                    <p class="rec-text" id="recText">Loading recommendation...</p>
+                </div>
+
+                <!-- Disclaimer -->
+                <div class="glass-card disclaimer-final">
+                    <div class="disclaimer-icon">⚕️</div>
+                    <div class="disclaimer-text">
+                        <strong>Important:</strong> This risk assessment is for screening purposes only and
+                        does not constitute a medical diagnosis. Please consult with a qualified healthcare
+                        provider for proper evaluation, diagnosis, and treatment recommendations.
+                    </div>
+                </div>
+
+                <!-- Actions -->
+                <div class="results-actions">
+                    <a href="dashboard.html" class="btn btn-secondary">
+                        <span>Back to Dashboard</span>
+                    </a>
+                    <button onclick="window.print()" class="btn btn-primary">
+                        <span>Print Report</span>
+                    </button>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="js/api.js"></script>
+    <script src="js/final-results.js"></script>
+</body>
+
+</html>
