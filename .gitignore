@@ -1,0 +1,30 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual envs
+venv/
+b&b/
+pyvenv.cfg
+Scripts/
+Lib/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Data / artifacts (do NOT commit sensitive or large files)
+dataset/
+stage 1/*.pkl
+stage 2/*.pkl
+stage 3/*.pkl
+stage 1/*_scaler.pkl
+stage 2/*_scaler.pkl
+stage 3/*_scaler.pkl
+stage1_model.joblib
+stage3_model_joblib.pkl
+
+# OS
+.DS_Store
+Thumbs.db
